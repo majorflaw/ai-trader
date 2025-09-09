@@ -4,6 +4,7 @@
 - `run.py` — CLI entry; enforces paper-only; calls executor stub.
 - `README.md` — setup and usage.
 - `API_CONTRACTS.md` — LLM action contract and interfaces (initial).
+- `config.example.toml` — example configuration file users can copy to `config.toml`.
 - `data/kraken_client.py` — Kraken public-data client (stub).
 - `indicators/indicators.py` — indicator placeholders.
 - `contracts/action_contract.py` — action JSON schema + validator stub.
@@ -22,6 +23,7 @@
 - `run.py` — parse args, refuse non-paper, kick off loop.
 - `README.md` — how to run.
 - `API_CONTRACTS.md` — contracts spec; to be expanded.
+- `config.example.toml` — shows configurable keys and typical values.
 - `data/kraken_client.py` — fetch pairs/candles (to implement).
 - `indicators/indicators.py` — RSI/EMA/ATR/VWAP (to implement).
 - `contracts/action_contract.py` — strict JSON schema & validation.
@@ -36,9 +38,9 @@
 - `logs/.gitkeep` — placeholder.
 
 ## Changes this step
-- Initial scaffold created; no functional trading yet.
+- Added a validated configuration system with precedence: CLI > TOML > env > defaults. Wired into `run.py`. Added example TOML and updated docs.
 
 ## How to run (paper mode)
 ```bash
-python run.py --pair BTC/EUR --paper --dry-run
+python run.py --paper --dry-run
 ```

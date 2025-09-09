@@ -1,0 +1,22 @@
+# Example config for the paper-trading agent.
+# Copy to `config.toml` and edit as needed.
+
+# You can keep keys at the top level or nest under [config].
+# [config]
+fee_bps = 5.0
+per_trade_loss_cap = 0.01
+daily_loss_cap = 0.05
+timeframe = "5m"          # allowed: 1m, 5m, 15m, 1h, 4h
+default_pair = "BTC/EUR"
+
+# runtime
+auto_eur = false
+loop_interval = 15
+
+# integrations
+groq_api_key = ""         # set later when LLM is used
+groq_model = "llama3.1-70b"
+
+# paths
+storage_dir = "storage"
+logs_dir = "logs"
